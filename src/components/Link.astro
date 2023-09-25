@@ -1,0 +1,7 @@
+---
+const { styles='', href} = Astro.props
+---
+
+<a href={href} class={`relative z-10 before:rounded-sm before:absolute before:left-0 before:bottom-0 before:-z-10 before:w-full before:h-1/5 before:hover:h-1/2 cursor-pointer before:transition-all before:duration-200 ${styles} `}>
+    <slot/>
+</a>
