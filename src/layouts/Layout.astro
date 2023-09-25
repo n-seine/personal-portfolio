@@ -5,7 +5,7 @@ interface Props {
 
 const { title } = Astro.props;
 import '@fontsource-variable/raleway';
-
+import Navbar from '../components/Navbar.astro'
 ---
 
 <!doctype html>
@@ -20,6 +20,7 @@ import '@fontsource-variable/raleway';
 		<title>{title}</title>
 	</head>
 	<body class="font-sans text-black dark:text-neutral-100">
+		<Navbar/>
 		<slot />
 	</body>
 </html>

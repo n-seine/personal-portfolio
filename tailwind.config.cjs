@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         sans: ["Raleway Variable", "arial", ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        marron: "#1c170b",
+      },
     },
   },
   plugins: [],
