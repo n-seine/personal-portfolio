@@ -1,0 +1,50 @@
+---
+import Section from "./Section.astro"
+import Accordion from './Accordion.astro'
+
+const firstAccordionItems = [
+    {
+        id:"1",
+        heading:"Une personnalisation totale",
+        text: "Pourquoi coder un site web à la main alors  total sur le design et la fonctionnalité : En développant un site web à la main, vou  total sur le design et la fonctionnalité : En développant un site web à la main, vouqu'il existe des outils simples comme Wordpress?"
+    },
+    {
+        id:"2",
+        heading:"Des performances optimales",
+        text: "Pourquoi coder un site web à la main alors  total sur le design et la fonctionnalité : En développant un site web à la main, vou  total sur le design et la fonctionnalité : En développant un site web à la main, vouqu'il existe des outils simples comme Wordpress?"
+    },
+    {
+        id:"3",
+        heading:"Un référencement amélioré",
+        text: "Pourquoi coder un site web à la main alors  total sur le design et la fonctionnalité : En développant un site web à la main, vou  total sur le design et la fonctionnalité : En développant un site web à la main, vouqu'il existe des outils simples comme Wordpress?"
+    },
+    {
+        id:"4",
+        heading:"Des utilsateurs heureux",
+        text: "Pourquoi coder un site web à la main alors  total sur le design et la fonctionnalité : En développant un site web à la main, vou  total sur le design et la fonctionnalité : En développant un site web à la main, vouqu'il existe des outils simples comme Wordpress?"
+    },
+    {
+        id:"5",
+        heading:"Des tas d'économies",
+        text: "Pourquoi coder un site web à la main alors  total sur le design et la fonctionnalité : En développant un site web à la main, vou  total sur le design et la fonctionnalité : En développant un site web à la main, vouqu'il existe des outils simples comme Wordpress?"
+    },
+]
+
+---
+
+<Section class=" text-neutral-950 dark:text-neutral-100 bg-neutral-50 dark:bg-marron">
+<div class="w-full py-10 flex flex-col gap-8 lg:gap-0 items-baseline  md:flex-row">
+        <div class="md:w-1/2 mr-auto h-full" >
+            <h2 class="mb-4 text-3xl md:text-4xl lg:text-5xl font-light">
+                Pourquoi coder un site web à la main alors qu'il existe des outils simples comme Wordpress?
+            </h2>
+            <p class="font-bold text-orange-700"> Parce qu'il n'y a presque que des avantages !</p>
+        </div>
+
+        <div class=' md:w-2/5'>
+            <Accordion items={firstAccordionItems}></Accordion>
+        </div>
+    </div>
+
+</Section>
+ 

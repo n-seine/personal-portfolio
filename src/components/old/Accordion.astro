@@ -1,0 +1,9 @@
+---
+import AccordionItem from "./AccordionItem.astro";
+const {items} = Astro.props
+---
+
+
+<div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-none" data-inactive-classes="text-neutral-950 dark:text-neutral-100">
+  {items.map((item) => <AccordionItem id = {item.id} heading={item.heading} text={item.text}/>)}
+</div>
