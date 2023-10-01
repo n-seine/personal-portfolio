@@ -1,91 +1,105 @@
 ---
+import { slide } from "astro:transitions";
 ---
 
-<section class="w-screen h-screen flex items-center justify-center bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-100 to-gray-400 via-slate-200">
+<!-- Global flex container for whole page -->
+<section class="w-full -mt-16 md:mt-0 h-full flex items-center justify-center ">
     
-    <div id="bloc-central" class="relative mx-auto">
+    <!-- Central div: name and job + hovering elements -->
+    <div id="bloc-central" class="relative mx-auto flex flex-col items-center ">
     
+        <h1 class="text-neutral-800 text-4xl md:text-5xl lg:text-5xl xl:text-7xl font-thin uppercase pt-20 pb-1 lg:pb-2 md:pt-0 mt-auto">
+            Nicolas Seine</h1>
         
-        <h1 class="text-neutral-800 text-3xl md:text-4xl lg:text-5xl font-thin uppercase pt-20 pb-2 md:pt-0 mt-auto">
-            Nicolas Seine
-        </h1>
-        
-        <h2 class="relative text-neutral-800 text-md md:text-lg lg:text-xl font-semibold uppercase pb-4 text-center mb-auto">
-            Développeur de 
-            <span id="link-sites" class="underline decoration-1  underline-offset-4 decoration-neutral-400 cursor-pointer">sites web</span>
-                
-            <svg class="absolute md:block  text-neutral-900"
-            viewBox="61 199.7 346 83.3">
-                <path id="stroke-sites" d="M 405 201 L 270 201 L 230 283 L 40 283" stroke="currentColor" stroke-width="1px"  style="fill: none; vector-effect: non-scaling-stroke; stroke-linecap: square"></path>
+        <h2 class="relative text-neutral-800 text-md md:text-lg lg:text-xl xl:text-2xl font-semibold uppercase  text-center mb-auto px-52">
+            Développeur de
+            
+            <!-- "Sites web" -->
+            <div class="relative inline-block ">
+                <a id="link-sites" class="relative z-40 underline decoration-1  underline-offset-4 decoration-neutral-400 cursor-pointer">sites web</a>    
+            <svg class="w-[600px] xl:w-[900px] absolute to-animate opacity-80 bottom-[0.6px] -left-[20.55rem] lg:bottom-0 lg:-left-[331px] xl:-left-[500px] md:block  text-neutral-400 " viewBox="0 0 500 200">
+                <path id="stroke-sites" class="" d="M 276 198 L 390 198 L 420 130 L 380 100 L 0 100 " stroke="currentColor" stroke-width="1px"  style="fill: none; vector-effect: non-scaling-stroke; stroke-linecap: square"></path>
             </svg>
+            </div>
+            
             
            
-            
+            <!-- "Faits main" -->
             <span  class="block relative">
                 <span id="link-main" class="underline decoration-1  underline-offset-4 decoration-neutral-400 cursor-pointer">faits main</span>
-                    
-                    <svg class="absolute  md:block w-80 h-auto top-6 right-1/3 text-neutral-900"
-                    viewBox="61 199.7 346 83.3">
-                      <path id="stroke-main" d="M 405 201 L 270 201 L 230 283 L 40 283" stroke="currentColor" stroke-width="1px"  style="fill: none; vector-effect: non-scaling-stroke; stroke-linecap: square"></path>
-                    </svg>
-
+                <svg class="absolute to-animate md:block w-[600px]  h-auto top-6 right-16 lg:w-[680px] lg:right-[90px] lg:top-7 text-neutral-400"viewBox="0 0 500 200">
+                    <path id="stroke-main" d="M 492 0 L 400 0 L 350 70 L 180 70" stroke="currentColor" stroke-width="1px"  style="fill: none; vector-effect: non-scaling-stroke; stroke-linecap: square"></path>
+                </svg>
             </span>
         </h2>
     
-        <div id="text-1" class="h-8 w-1/2 absolute right-64 -bottom-24 text-sm opacity-0 ">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio est asperiores cum saep</p>
+        <!-- Text that appears when hovering "faits main" -->
+        <div id="text-main" class="h-8 w-64 absolute left-1 -bottom-[120px] lg:-bottom[130px] lg:left-6 text-xs lg:text-sm opacity-0 ">
+            <p class="font-bold uppercase">Ma démarche</p>
+            <p>Des sites web codés ligne par ligne, personnalisés et performants</p>
         </div>
-    </div>
-   
-    <div  class="absolute group -right-16">
-        
-     
-        <div class="absolute translate-x-full opacity-50 group-hover:opacity-10 group-hover:-translate-x-full transition-all duration-1000 right-14 bottom-[100px] w-screen h-px bg-neutral-950"></div>
-        <div class="absolute translate-x-full opacity-50 group-hover:opacity-10 group-hover:-translate-x-full transition-all duration-1000 right-14 top-[100px] w-screen h-px bg-neutral-950"></div>
-        
-        <div id="contact-button" class=" bg-neutral-950 w-40 h-10 -rotate-90 pt-2 px-2 text-sm font-bold text-white text-center cursor-pointer">
-            CONTACT
+
+        <!-- Text that appears when hovering "sites web" -->
+        <div id="text-sites" class="h-8 w-64 absolute left-8 bottom-44 lg:bottom-52 lg:left-12 text-xs lg:text-sm opacity-0 ">
+            <p class="font-bold uppercase">Mes réalisations</p>
+            <p>Quelques exemples de sites et applications web que j'ai développés</p>
         </div>
 
     </div>
    
+
+    </div>
+
+    <div  class="absolute group  w-12 h-screen left-0 transition-all duration-75 border-r border-neutral-950 ">
+        <nav class="rotate-180 bg-transparent h-full w-full text-base font-light  text-neutral-700 text-center cursor-pointer [writing-mode:vertical-lr] flex items-center justify-center gap-4 ">
+            <a class="w-fit hover:font-bold text-neutral-950  ">accueil</a>
+            <a class="w-fit hover:font-bold text-neutral-950 ">ma démarche</a>
+            <a class="w-fit hover:font-bold text-neutral-950 ">mes réalisations</a>
+
+        </nav>
+       
+        </a>
+
+    </div>
+       
+    
 
 
 </section>
 
+
+
+
+
 <script>
     function animateLink(link, stroke, text= new HTMLElement) {
         link.addEventListener('mouseenter', e => {
-            stroke.classList.add("move","opacity-60")
-            text.classList.add('opacity-100', "transition-opacity", "duration-500", "delay-300")
+            stroke.classList.add("move","opacity-100")
+            text.classList.add('opacity-80', "transition-opacity", "duration-500", "delay-300")
             setTimeout( ()=>link.classList.remove('underline'), 200)
             &&  setTimeout(() => {
                 text.classList.remove("transition-opacity", "duration-500", "delay-300")
 
             }, 500);
         })
-
-
         link.addEventListener('mouseleave', e => {
-            stroke.classList.remove("move","opacity-60")
-            text.classList.remove('opacity-100')
+            stroke.classList.remove("move","opacity-100")
+            text.classList.remove('opacity-80')
             link.classList.add('underline')
-
-
         })
     }
-
-
+    
     const link1 = document.getElementById('link-sites')
     const stroke1 = document.getElementById('stroke-sites')
-    const text1= document.getElementById('text-1')
+    const text1= document.getElementById('text-sites')
     animateLink(link1, stroke1, text1)
 
     const link2 = document.getElementById('link-main')
     const stroke2 = document.getElementById('stroke-main')
-    animateLink(link2, stroke2, text1)
+    const text2= document.getElementById('text-main')
+    animateLink(link2, stroke2, text2)
 
-    
+
 </script>
 
 <style>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  path {
+  .to-animate path {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
   }

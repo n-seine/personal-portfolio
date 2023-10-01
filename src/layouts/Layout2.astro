@@ -4,8 +4,20 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import '@fontsource-variable/raleway';
+import '@fontsource/poppins/100.css';
+import '@fontsource/poppins/200.css';
+import '@fontsource/poppins/300.css';
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
+import '@fontsource/poppins/700.css';
+import '@fontsource/poppins/800.css';
+import '@fontsource/poppins/900.css';
 import '../style/base.css'
+
+import Navbar from './Navbar.astro';
+import ContactForm from '../components/ContactForm.astro';
+
 ---
 
 <!doctype html>
@@ -18,9 +30,17 @@ import '../style/base.css'
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+
 	</head>
 	
-    <body class="font-sans">
-		<slot />
+    <body class="overflow-x-hidden  font-sans bg-neutral-900 flex justify-center">
+		<div id="content-container" class="relative w-screen h-full min-h-screen max-w-7xl flex justify-center  bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-100 to-gray-400 via-slate-200">
+			<Navbar />
+			<ContactForm/>
+			<slot />
+		</div>
+		<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+
 	</body>
 </html>

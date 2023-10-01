@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Raleway Variable", "arial", ...defaultTheme.fontFamily.sans],
+        sans: ["Poppins", "arial", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         marron: "#1c170b",

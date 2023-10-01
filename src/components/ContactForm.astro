@@ -1,0 +1,57 @@
+<aside id="contact-page" class="absolute w-full right-0  h-screen z-50 flex flex-row justify-end items-center translate-x-3/4 transition-all">
+
+    <!-- Contact button -->
+    <div class=" bg-neutral-900 rounded-l-lg w-12 hover:w-14 transition-all duration-75 flex-row justify-center items-start">
+        <a  id="contact-button" class="w-full py-8 px-3 -rotate-180 text-sm font-semibold text-start text-white cursor-pointer [writing-mode:vertical-lr]  ">
+            contactez-moi
+        </a>
+    </div>  
+
+    <div  
+    class=" group bg-neutral-900 h-full w-3/4  pt-10 pl-20 flex flex-col justify-center gap-20 transition-all duration-700">
+        <form id="contact-form" class="hidden w-3/4 transition-all">
+            <h1 class="text-xl font-bold text-neutral-100 pb-2">Un projet ? Une question ?</h1>
+            <h2 class="text-base font-light text-neutral-100">Envoyez-moi un message via le formulaire, <br>
+                je vous répondrai au plus vite</h2>
+
+            <div class="relative z-0 w-2/3 mt-6 mb-6 group">
+                <input type="text" name="nom" id="nom" class="peer block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b border-neutral-500 appearance-nonefocus:outline-none focus:ring-0 focus:border-neutral-600 peer" placeholder=" " required />
+                <label for="nom" class="peer-focus:font-medium absolute text-sm text-neutral-200 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-white peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Quel est votre nom ? :</label>
+            </div>
+
+            <div class="relative z-0 w-2/3 mb-6 group">
+                <input type="email" name="email" id="email" class="peer block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b border-neutral-500 appearance-nonefocus:outline-none focus:ring-0 focus:border-neutral-600 peer" placeholder=" " required />
+                <label for="email" class="peer-focus:font-medium absolute text-sm text-neutral-200 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-white peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Et votre adresse email ?</label>
+            </div>
+
+            <div class="relative z-0 w-2/3 mb-12 group">
+                <input type="tel" name="tel" id="tel" class="peer block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b border-neutral-500 appearance-nonefocus:outline-none focus:ring-0 focus:border-neutral-600 peer" placeholder=" "  />
+                <label for="email" class="peer-focus:font-medium absolute text-sm text-neutral-200 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-white peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Un numéro de téléphone ? <span class="text-xs">(facultatif) </span>:</label>
+            </div>
+
+            <div class="relative z-0 w-full mb-6  group">
+                <label for="message" class=" text-sm text-neutral-200 ">Enfin, écrivez ici votre message :</label>
+                <textarea rows="6" name="message" id="message" class=" mt-2 pt-2 px-2 w-full h-auto text-sm text-white  bg-neutral-950 focus:outline-none focus:ring-0 focus:border-neutral-600 border-0" placeholder="" required />            </div>
+            
+            <button type="submit" class="text-neutral-950 bg-neutral-300 hover:bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Envoyer</button>
+          </form>
+    
+        
+    </div>  
+    
+    
+</aside>
+
+<script>
+    const button=document.getElementById('contact-button')
+    const page=document.getElementById('contact-page')
+    const form=document.getElementById('contact-form')
+
+
+    button.addEventListener('click', (e) => {
+        e.preventDefault()
+        page.classList.toggle('translate-x-3/4')
+        form.classList.toggle('hidden')
+    })
+
+</script>
