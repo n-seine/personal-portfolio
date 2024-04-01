@@ -3,6 +3,9 @@ import { Image } from "astro:assets";
 import Layout2 from "../layouts/Layout2.astro";
 import CardWithImage from "../components/CardWithImage.astro";
 import FeatureCard from "../components/FeatureCard.astro";
+import webDevimage from "../assets/images/6505228.png";
+import codeImage from "../assets/images/code.png";
+import cmsImage from "../assets/images/cms.png";
 ---
 
 <Layout2 title="Ma démarche : développer dessites statiques performants">
@@ -22,7 +25,7 @@ import FeatureCard from "../components/FeatureCard.astro";
       </h1>
 
       <Image
-        src="/src/assets/images/6505228.png"
+        src={webDevimage}
         width={800}
         height={800}
         class="w-full h-auto"
@@ -86,7 +89,7 @@ import FeatureCard from "../components/FeatureCard.astro";
       >
         <CardWithImage
           title="Un site codé à la main"
-          img="/src/assets/images/code.png"
+          img={codeImage}
           text=" Pour un résultat flexible et adapté à vos besoins, optimisé et performant. Du travail sur mesure !"
         />
         <svg
@@ -121,7 +124,7 @@ import FeatureCard from "../components/FeatureCard.astro";
 
         <CardWithImage
           title="Alimenté par un CMS"
-          img="/src/assets/images/cms.png"
+          img={cmsImage}
           text=" Une interface simple et conviviale, Wordpress ou équivalent, pour gérer votre site, modifier et ajouter vos contenus "
         />
       </div>
