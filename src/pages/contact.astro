@@ -1,9 +1,13 @@
 ---
+import ContactForm from "../components/ContactForm.astro";
 import Layout2 from "../layouts/Layout2.astro";
 import { slide } from "astro:transitions";
-
 ---
+
 <Layout2 title="Contactez-moi">
-
+  <main
+    class="w-full md:w-3/4 pt-32 md:mt-0 h-full flex flex-col items-start justify-center gap-12 md:gap-24 lg:gap-36 mb-16 lg:mb-32"
+  >
+    <ContactForm theme="light" />
+  </main>
 </Layout2>
-

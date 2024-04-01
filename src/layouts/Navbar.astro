@@ -1,38 +1,23 @@
----
-const menuItems = [{name:"Démarche", link:"/démarche"},{name:"Réalisations", link:"/portfolio"},{name:"Contact", link:"/contact"}, ]
-
----
-<nav id="main-nav" class=" w-full flex items-center justify-center mx-auto group h-16 px-8 md:hidden">
-	
-   <div class="dropdown-link-container z-10 fixed top-0 left-0 right-0 w-full h-screen  bg-neutral-100 dark:bg-neutral md:gap-5 opacity-0 -translate-y-full transition-all duration-500 group-[.is-open]:translate-y-0 group-[.is-open]:opacity-100 md:opacity-100 md:bg-transparent md:h-fit md:relative md:translate-y-0 md:w-fit">
-    <ul class=" pt-32 md:pt-0  px-20 relative flex flex-col w-full  md:flex-row gap-10  md:px-0 md:gap-8 lg:gap-12 md:items-center ">
-     {menuItems.map(item => 
-         <li class="w-1/2 border-b border-neutral-400 pb-4 md:border-none md:pb-0">
-             <a class="font-light text-xl md:font-semibold text-neutral-500 md:text-sm hover:text-black" href={item.link}>{item.name}</a>
-         </li>)}
-    </ul>
-    
-   </div> 
-
-
- 
-  <button class="mobile-dropdown-toggle hidden md:visible text-black border border-black border-opacity-50 rounded-full"  aria-hidden="true">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1px" stroke="black" class="p-1 w-9 h-9">
-      <path stroke-linecap="square" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-    </svg>
-  </button>
-  
-</nav>
-
-<script>
-    // get a ref to our navbar (assuming it has this id)
-const navElement = document.getElementById("main-nav");
-const buttonElement = document.querySelector("button");
-
-buttonElement.addEventListener("click", (event) => {
-    navElement.classList.toggle("is-open");
-    console.log('click', event)
-});
-
-
-</script>
+<div
+  class="absolute group w-full lg:w-12 lg:h-full px-4 py-4 lg:py-0 left-0 top-0 transition-all duration-75 lg:border-r border-neutral-950"
+>
+  <nav
+    class="relative lg:fixed lg:top-0 lg:left-0 lg:rotate-180 bg-transparent h-full w-full lg:w-12 text-sm md:text-base font-light text-neutral-700 text-center cursor-pointer lg:[writing-mode:vertical-lr] flex flex-wrap items-center justify-center gap-4 lg:gap-16"
+  >
+    <a
+      class="w-fit hover:text-neutral-950 hover:font-normal text-neutral-700"
+      href="/">accueil</a
+    >
+    <a
+      class="w-fit hover:text-neutral-950 hover:font-normal text-neutral-700"
+      href="demarche">ma démarche</a
+    >
+    <a class="w-fit hover:text-neutral-950 hover:font-normal text-neutral-700"
+      >mes réalisations</a
+    >
+    <a
+      class="w-fit hover:text-neutral-950 hover:font-normal text-neutral-50 bg-neutral-800 px-4 py-2 rounded-md md:hidden"
+      href="contact">contact</a
+    >
+  </nav>
+</div>

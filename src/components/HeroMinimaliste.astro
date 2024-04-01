@@ -3,114 +3,58 @@ import { slide } from "astro:transitions";
 ---
 
 <!-- Global flex container for whole page -->
-<section class="w-full -mt-16 md:mt-0 h-full flex items-center justify-center ">
-    
-    <!-- Central div: name and job + hovering elements -->
-    <div id="bloc-central" class="relative mx-auto flex flex-col items-center ">
-    
-        <h1 class="text-neutral-800 text-4xl md:text-5xl lg:text-5xl xl:text-7xl font-thin uppercase pt-20 pb-1 lg:pb-2 md:pt-0 mt-auto">
-            Nicolas Seine</h1>
-        
-        <h2 class="relative text-neutral-800 text-md md:text-lg lg:text-xl xl:text-2xl font-semibold uppercase  text-center mb-auto px-52">
-            Développeur de
-            
-            <!-- "Sites web" -->
-            <div class="relative inline-block ">
-                <a id="link-sites" class="relative z-40 underline decoration-1  underline-offset-4 decoration-neutral-400 cursor-pointer">sites web</a>    
-            <svg class="w-[600px] xl:w-[900px] absolute to-animate opacity-80 bottom-[0.6px] -left-[20.55rem] lg:bottom-0 lg:-left-[331px] xl:-left-[500px] md:block  text-neutral-400 " viewBox="0 0 500 200">
-                <path id="stroke-sites" class="" d="M 276 198 L 390 198 L 420 130 L 380 100 L 0 100 " stroke="currentColor" stroke-width="1px"  style="fill: none; vector-effect: non-scaling-stroke; stroke-linecap: square"></path>
-            </svg>
-            </div>
-            
-            
-           
-            <!-- "Faits main" -->
-            <span  class="block relative">
-                <span id="link-main" class="underline decoration-1  underline-offset-4 decoration-neutral-400 cursor-pointer">faits main</span>
-                <svg class="absolute to-animate md:block w-[600px]  h-auto top-6 right-16 lg:w-[680px] lg:right-[90px] lg:top-7 text-neutral-400"viewBox="0 0 500 200">
-                    <path id="stroke-main" d="M 492 0 L 400 0 L 350 70 L 180 70" stroke="currentColor" stroke-width="1px"  style="fill: none; vector-effect: non-scaling-stroke; stroke-linecap: square"></path>
-                </svg>
-            </span>
-        </h2>
-    
-        <!-- Text that appears when hovering "faits main" -->
-        <div id="text-main" class="h-8 w-64 absolute left-1 -bottom-[120px] lg:-bottom[130px] lg:left-6 text-xs lg:text-sm opacity-0 ">
-            <p class="font-bold uppercase">Ma démarche</p>
-            <p>Des sites web codés ligne par ligne, personnalisés et performants</p>
+<main class="w-full -mt-16 md:mt-0 h-full flex items-center justify-center">
+  <!-- Central div: name and job + hovering elements -->
+  <div id="bloc-central" class="relative mx-auto flex flex-col items-center">
+    <h1
+      class="text-neutral-800 text-4xl md:text-5xl lg:text-5xl xl:text-7xl font-thin uppercase pt-20 pb-1 lg:pb-2 md:pt-0 mt-auto"
+    >
+      Nicolas Seine
+    </h1>
+
+    <h2
+      class="relative text-neutral-800 text-md md:text-lg lg:text-xl xl:text-2xl font-semibold uppercase text-center mb-auto px-8 md:px-52"
+    >
+      Développeur de
+      <span>
+        <a
+          id="link-sites"
+          class="peer relative z-40 underline decoration-1 underline-offset-4 decoration-neutral-400 cursor-pointer mr-1"
+          >sites web,
+        </a>
+        <div
+          id="text-sites"
+          class="h-32 w-screen mt-32 opacity-0 peer-hover:opacity-90 transition-opacity duration-500 fixed left-0 text-sm lg:text-base"
+        >
+          <p class="font-bold uppercase">Voir mes réalisations</p>
+          <p class="font-light">
+            Quelques exemples de sites et applications web que j'ai développés
+          </p>
         </div>
-
-        <!-- Text that appears when hovering "sites web" -->
-        <div id="text-sites" class="h-8 w-64 absolute left-8 bottom-44 lg:bottom-52 lg:left-12 text-xs lg:text-sm opacity-0 ">
-            <p class="font-bold uppercase">Mes réalisations</p>
-            <p>Quelques exemples de sites et applications web que j'ai développés</p>
-        </div>
-
-    </div>
-   
-
-    </div>
-
-    <div  class="absolute group  w-12 h-screen left-0 transition-all duration-75 border-r border-neutral-950 ">
-        <nav class="rotate-180 bg-transparent h-full w-full text-base font-light  text-neutral-700 text-center cursor-pointer [writing-mode:vertical-lr] flex items-center justify-center gap-4 ">
-            <a class="w-fit hover:font-bold text-neutral-950  ">accueil</a>
-            <a class="w-fit hover:font-bold text-neutral-950 ">ma démarche</a>
-            <a class="w-fit hover:font-bold text-neutral-950 ">mes réalisations</a>
-
-        </nav>
-       
+      </span>
+      <br class="hidden md:block" />
+      <span>
+        <a
+          href="demarche"
+          id="link-main"
+          class="underline peer decoration-1 underline-offset-4 decoration-neutral-400 cursor-pointer"
+          >personnalisés et performants
         </a>
 
-    </div>
-       
-    
+        <div
+          id="text-sites"
+          class="h-32 w-screen mt-32 -translate-y-7 opacity-0 peer-hover:opacity-90 transition-opacity duration-500 fixed left-0 text-sm lg:text-base"
+        >
+          <p class="font-bold uppercase">Comprendre ma démarche</p>
+          <p class="font-light">
+            Des sites web codés ligne par ligne ... mais pourquoi est-ce mieux ?
+          </p>
+        </div>
+      </span>
+    </h2>
+  </div>
 
+  <!-- Container for links description     -->
+</main>
 
-</section>
-
-
-
-
-
-<script>
-    function animateLink(link, stroke, text= new HTMLElement) {
-        link.addEventListener('mouseenter', e => {
-            stroke.classList.add("move","opacity-100")
-            text.classList.add('opacity-80', "transition-opacity", "duration-500", "delay-300")
-            setTimeout( ()=>link.classList.remove('underline'), 200)
-            &&  setTimeout(() => {
-                text.classList.remove("transition-opacity", "duration-500", "delay-300")
-
-            }, 500);
-        })
-        link.addEventListener('mouseleave', e => {
-            stroke.classList.remove("move","opacity-100")
-            text.classList.remove('opacity-80')
-            link.classList.add('underline')
-        })
-    }
-    
-    const link1 = document.getElementById('link-sites')
-    const stroke1 = document.getElementById('stroke-sites')
-    const text1= document.getElementById('text-sites')
-    animateLink(link1, stroke1, text1)
-
-    const link2 = document.getElementById('link-main')
-    const stroke2 = document.getElementById('stroke-main')
-    const text2= document.getElementById('text-main')
-    animateLink(link2, stroke2, text2)
-
-
-</script>
-
-<style>
-    .move {
-    animation: dash 0.8s linear forwards;
-    }
-
-    @keyframes dash {
-    to {
-        stroke-dashoffset: 0;
-        }
-    }   
-
-</style>
+<script></script>

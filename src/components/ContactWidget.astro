@@ -1,0 +1,23 @@
+---
+import ContactForm from "./ContactForm.astro";
+---
+
+<aside
+  id="contact-page"
+  class="fixed hidden lg:flex w-full lg:w-2/3 right-0 h-screen z-50 flex-row justify-end items-center translate-x-3/4 transition-all"
+>
+  <!-- Contact button -->
+  <ContactForm />
+</aside>
+
+<script>
+  const button = document.getElementById("contact-button");
+  const page = document.getElementById("contact-page");
+  const form = document.getElementById("contact-form");
+
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    page.classList.toggle("translate-x-3/4");
+    form.classList.toggle("opacity-0");
+  });
+</script>

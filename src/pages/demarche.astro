@@ -1,0 +1,196 @@
+---
+import { Image } from "astro:assets";
+import Layout2 from "../layouts/Layout2.astro";
+import CardWithImage from "../components/CardWithImage.astro";
+import FeatureCard from "../components/FeatureCard.astro";
+---
+
+<Layout2 title="Ma démarche : développer dessites statiques performants">
+  <main
+    class="w-3/4 pt-32 md:mt-0 h-full flex flex-col items-start justify-center gap-24 lg:gap-36 mb-16 lg:mb-32"
+  >
+    <section
+      class="flex flex-col lg:flex-row justify-center gap-12 items-center w-full"
+    >
+      <h1
+        class="text-neutral-800 text-4xl md:text-5xl lg:text-5xl xl:text-7xl font-thin uppercase w-full"
+      >
+        Pourquoi s&#39;embêter à coder un site à la main
+        <p class="text-3xl md:text-4xl">
+          quand il existe des solutions simples comme Wordpress ?
+        </p>
+      </h1>
+
+      <Image
+        src="/src/assets/images/6505228.png"
+        width={800}
+        height={800}
+        class="w-full h-auto"
+        alt="une image illustrant le développement web"
+      />
+    </section>
+
+    <section
+      class="w-full text-neutral-800 text-base md:text-lg font-light max-w-4xl"
+    >
+      <h2
+        class="text-neutral-800 text-lg md:text-xl lg:text-2xl font-semibold uppercase mb-8"
+      >
+        Un site statique, qu'est-ce que c'est ?
+      </h2>
+      <p class="mb-2 text-justify">
+        La plupart des sites internet que je développe sont ce qu'on appelle des
+        sites statiques. Un site statique est un site qui se compose de fichiers
+        sources, des ensembles de lignes de code écrites à la main contenant les
+        différentes pages du site, leur contenu, leur mise en forme et toutes
+        les intéractions possibles entre ces différents éléments. Ces fichiers
+        existent sur un serveur, et sont directement envoyés aux utilisateurs
+        qui visitent le site. Au fond, pendant des années, tous les sites
+        existant sur internet étaient des sites statiques : c'est l'élément de
+        base du web.
+      </p>
+      <p class="mb-2 text-justify">
+        Puis des systèmes de gestion de contenus (CMS) se sont développés et
+        répandus : Drupal, Joomla, et le plus populaire d'entre tous :
+        Wordpress. Il permettent de créer des site internet sans avoir à écrire
+        une seule ligne de code, d'ajouter et modifier facilement les articles,
+        les images, les textes... Le problème est que ce que l'on gagne en
+        simplicité d'utilisation, on le perd sur d'autres plans : les
+        performances, la personnalisation, la stabilité et la sécurité.
+      </p>
+      <p class="mb-2 text-justify">
+        Là où un site sous Wordpress sera reconstruit et généré pour chaque
+        nouveau visiteur, un site statique et l'ensemble de son contenu n'est
+        reconstruit qu'à chaque fois que du nouveau contenu est ajouté ou
+        modifié. C'est beaucoup plus économe et performant !
+        <p class="mb-2 text-justify font-semibold">
+          Un site plus performant, mais pour le reste, rien ne change : statique
+          ne veut pas dire ennuyeux. Votre site pourra contenir toutes sortes
+          d'animations, d'interactions, de vidéos. Et il sera bien évidemment
+          responsive, c'est à dire adapté aux smartphones, aux tablettes comme
+          aux écrans d'ordinateurs.
+        </p>
+      </p>
+    </section>
+    <section
+      class="w-full text-neutral-800 text-base md:text-lg font-light"
+      data-aos="fade"
+    >
+      <h2
+        class="text-neutral-800 text-lg md:text-xl lg:text-2xl font-semibold uppercase mb-8"
+      >
+        Ce que je propose, c'est d'associer le meilleur des deux mondes :
+      </h2>
+      <div
+        class="w-full flex flex-col lg:flex-row gap-6 justify-start items-center lg:items-start"
+      >
+        <CardWithImage
+          title="Un site codé à la main"
+          img="/src/assets/images/code.png"
+          text=" Pour un résultat flexible et adapté à vos besoins, optimisé et performant. Du travail sur mesure !"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="0.5"
+          stroke="currentColor"
+          class="lg:hidden w-1/5 h-auto stroke-neutral-600 content-center"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5"
+          ></path>
+        </svg>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="0.5"
+          stroke="currentColor"
+          class="hidden lg:block w-1/3 h-auto stroke-neutral-600 place-self-center"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
+          ></path>
+        </svg>
+
+        <CardWithImage
+          title="Alimenté par un CMS"
+          img="/src/assets/images/cms.png"
+          text=" Une interface simple et conviviale, Wordpress ou équivalent, pour gérer votre site, modifier et ajouter vos contenus "
+        />
+      </div>
+    </section>
+
+    <section class="w-full text-neutral-800 text-base md:text-lg font-light">
+      <h2
+        class="text-neutral-800 text-lg md:text-xl lg:text-2xl font-semibold uppercase mb-8"
+      >
+        Mais pourquoi c'est mieux, un site statique ?
+      </h2>
+      <ul
+        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full gap-16 justify-between items-stretch"
+      >
+        <FeatureCard
+          title="Personnalisation"
+          text="En n'étant pas dépendant de thèmes et plugins préexistants, un site statique offre une personnalisation complète du design, des fonctionnalités et du contenu."
+        />
+
+        <FeatureCard
+          title="Performance"
+          text="Les sites statiques sont pré-construits et servis tels quels aux visiteurs, ce qui se traduit par des temps de chargement plus rapides."
+        />
+        <FeatureCard
+          title="Expérience utilisateur"
+          text="Un design sur-mesure, des temps de chargement minimes, un site accessible... De quoi garantir une navigation fluide et heureuse."
+        />
+        <FeatureCard
+          title="SEO "
+          text="Ce que vos utilisateurs apprécient, les moteurs de recherche l'aiment aussi ! Les sites statiques à l'heure actuelle ce qui se fait de mieux pour le SEO et la visibilité"
+        />
+        <FeatureCard
+          title="Sécurité et maintenance "
+          text="Les sites statiques, moins liés aux bases de données, sont moins vulnérables aux attaques de pirates et aux failles de sécurité. Ils demandent aussi moins de ressources serveur, moins de maintenance... au final, moins de coûts "
+        />
+        <FeatureCard
+          title="Sobriété énergétique "
+          text="On ne va pas se mentir, un site internet n'est jamais écologique. Mais quelques bonnes pratiques de code permettent de limiter l'impact en ressources et en énergie. Et les sites statiques, en limitant la charge des serveurs, ont une empreinte carbone bien plus faible que les autres. "
+        />
+      </ul>
+    </section>
+
+    <section
+      data-aos="fade-up"
+      class="w-3/4 md:w-10/12 lg:w-full text-neutral-800 text-base md:text-lg font-light justify-center items-center flex flex-col xl:flex-row gap-8 lg:gap-16 place-self-center"
+    >
+      <CardWithImage
+        title="Mais pour ça, il vous faut un développeur"
+        text="C'est peut-être le seul inconvénient des sites statiques : il faut taper des lignes de code à la main. Et donc trouver quelqu'un qui sait le faire et aime le faire. Heureusement, je suis là !"
+      >
+        <a
+          class="w-fit hover:bg-neutral-950 font-semibold text-neutral-50 bg-neutral-800 px-8 py-4 rounded-md mt-24 my-6"
+          href="contact">Vous avez un projet ? Contactez-moi</a
+        >
+      </CardWithImage>
+      <CardWithImage
+        title="Et combien ça coûte ?"
+        text="Tout dépend de l'ampleur du projet, des fonctionnalités... Et si le coût initial de développement peut être plus élevé que celui d'un site basé sur un thème tout fait, la maintenance sera toujours moins chère.  "
+      >
+        <ul class="text-left my-6">
+          Si vous voulez vraiment un ordre de grandeur, comptez environ :
+          <li class="list-disc mt-4">
+            de 1500 à 3000 € pour un site statique simple de quelques pages
+          </li>
+          <li class="list-disc">
+            de 4000 à 8000 € pour un projet plus complexe et étoffé
+          </li>
+        </ul>
+      </CardWithImage>
+    </section>
+  </main>
+</Layout2>
