@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+
+const projets = await getCollection("projet");
+---
+
+<ul class="w-1/3 h-full flex flex-col justify-end py-12 gap-4">
+  {
+    projets.map((projet) => {
+      const types = projet.data.type.map((t) => t).join(" / ");
+      console.log("types", types);
+      return (
+        <li>
+          <a href={`/projets/${projet.slug}`} class="text-right">
+            <p class="text-neutral-800 hover:text-stone-500">
+              <span class="text-right text-xs font-semibold mr-2 ">
+                {types}
+              </span>
+
+              <span class=" inline text-4xl font-thin text-right">
+                {projet.data.titre}
+              </span>
+            </p>
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>
