@@ -1,0 +1,52 @@
+---
+import type { GetStaticPaths } from "astro";
+import { ViewTransitions } from "astro:transitions";
+
+import { getCollection, getEntry } from "astro:content";
+import ProjetLayout from "../../layouts/ProjetLayout.astro";
+import ProjetDetails from "../../components/ProjetDetails.astro";
+import { Image } from "astro:assets";
+export const getStaticPaths = (async () => {
+  const projets = await getCollection("projet");
+
+  return projets
+    .map((projet) => ({
+      params: { slug: projet.slug },
+      props: { projet },
+    }))
+    .concat({
+      params: { slug: undefined },
+      props: undefined,
+    });
+}) satisfies GetStaticPaths;
+
+const { projet } = Astro.props;
+
+const displayedProjet = projet || (await getEntry("projet", "site-personnel"));
+const { Content } = await displayedProjet.render();
+const types = displayedProjet.data.type.map((t) => t).join(" / ");
+---
+
+<ProjetLayout title="Mes projets / Mon portfolio">
+  <head>
+    <ViewTransitions />
+  </head>
+  <>
+    <h1 class="h-fit w-full text-4xl font-bold text-neutral-800 mb-2">
+      {displayedProjet.data.titre}
+    </h1>
+    <h2 class="text-neutral-800 text-lg font-light mb-8">{types}</h2>
+    <p class="text-neutral-800 text-2xl font-extralight mb-8">
+      {displayedProjet.data.headerText}
+    </p>
+    <Image
+      src={displayedProjet.data.coverImage}
+      alt={displayedProjet.data.altCover || "Une image illustrant le projet"}
+      width={1200}
+      class="w-full object-cover mb-16"
+    />
+    <div class="lg:prose-lg prose-neutral prose-p:font-light w-full line">
+      <Content />
+    </div>
+  </>
+</ProjetLayout>

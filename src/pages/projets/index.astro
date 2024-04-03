@@ -1,9 +1,0 @@
----
-import Layout2 from "../../layouts/Layout2.astro";
-import { getCollection, getEntries } from "astro:content";
-import ProjetLayout from "../../layouts/ProjetLayout.astro";
-const projets = await getCollection("projet");
-console.log("projets", projets);
----
-
-<ProjetLayout title="Mes projets / Mon portfolio" />

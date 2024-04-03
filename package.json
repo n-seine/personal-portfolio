@@ -27,6 +27,7 @@
     "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.12",
     "accessible-astro-components": "^2.3.5",
     "typescript": "^5.4.3"
   }
