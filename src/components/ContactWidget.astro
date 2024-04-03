@@ -4,7 +4,7 @@ import ContactForm from "./ContactForm.astro";
 
 <aside
   id="contact-page"
-  class="fixed hidden lg:flex w-full lg:max-w-4xl translate-x-3/4 right-0 h-screen z-20 flex-row justify-end items-center transition-all"
+  class="fixed hidden lg:flex w-full lg:max-w-4xl translate-x-3/4 right-0 h-screen z-0 flex-row justify-end items-center transition-all"
 >
   <!-- Contact button -->
   <ContactForm />
@@ -18,6 +18,8 @@ import ContactForm from "./ContactForm.astro";
   button.addEventListener("click", (e) => {
     e.preventDefault();
     page.classList.toggle("translate-x-3/4");
+    page.classList.toggle("z-20");
     form.classList.toggle("opacity-0");
+    form.classList.toggle("z-50");
   });
 </script>
