@@ -16,6 +16,7 @@ import "@fontsource/poppins/900.css";
 import "../style/base.css";
 import Navbar from "../components/Navbar.astro";
 import ContactForm from "../components/ContactWidget.astro";
+import AnalyticsScript from "../components/AnalyticsScript.astro";
 ---
 
 <!doctype html>
@@ -32,7 +33,7 @@ import ContactForm from "../components/ContactWidget.astro";
   </head>
 
   <body class="overflow-x-hidden font-sans bg-neutral-900 flex justify-center">
-    <script is:inline src="../lib/analytics.js"></script>
+    <AnalyticsScript />
     <div
       id="content-container"
       class="relative w-screen h-full min-h-screen flex justify-center bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-100 to-gray-400 via-slate-200"
