@@ -27,7 +27,9 @@ const { Content } = await displayedProjet.render();
 const types = displayedProjet.data.type.map((t) => t).join(" / ");
 ---
 
-<ProjetLayout title="Mes projets / Mon portfolio">
+<ProjetLayout
+  title={`Nicolas Seine : portfolio // ${displayedProjet.data.titre}`}
+>
   <head>
     <ViewTransitions />
   </head>
