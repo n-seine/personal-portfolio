@@ -10,6 +10,7 @@ const projetCollection = defineCollection({
       type: z.array(z.string()),
       subtitle: z.string().optional(),
       coverImage: image().optional(),
+      altCover : z.string().optional(),
       headerText: z.string().optional(),
     }),
 });

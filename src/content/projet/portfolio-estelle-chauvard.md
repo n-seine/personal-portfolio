@@ -23,5 +23,14 @@ L'hébergement a été changé pour Netlify, en restant dans leur offre gratuite
 
 ### Le résultat
 
+Les scoresGoogle Lighthouse sont grandement améliorés, surtout en matière de performance technique :
+
+#### Site initial :
+
 ![les scores lighthouse avant optimisation](./images/estelle-lighthouse-avant.png)
+
+#### Refonte optimisée:
+
 ![les scores lighthouse après optimisation](./images/estelle-lighthouse-apres.png)
+
+Quant à l'impact carbone, il a été **divisées par 60 !**, faisant passer le site de la tranche des 2% les plus polluants à celle des 14% les moins émetteurs de carbone.
