@@ -1,9 +1,13 @@
 ---
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "Je suis développeur web freelance et propose la création de site internet en Occitanie et dans toute la France. Si vous recherchez un développeur fullstack pour réaliser un site web performant, personnalisé et éco-responsale, contactez-moi",
+} = Astro.props;
 import "@fontsource/poppins/100.css";
 import "@fontsource/poppins/200.css";
 import "@fontsource/poppins/300.css";
@@ -17,28 +21,22 @@ import "../style/base.css";
 import Navbar from "../components/Navbar.astro";
 import ContactForm from "../components/ContactWidget.astro";
 import AnalyticsScript from "../components/AnalyticsScript.astro";
+import { SEO } from "astro-seo";
 ---
 
 <!doctype html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <!-- Mofifier le contenu ici  -->
-    <meta
-      name="description"
-      content="Je suis développeur web freelance et propose la création de site internet en Occitanie et dans toute la France. Si vous recherchez un développeur fullstack pour réaliser un site web performant, personnalisé et éco-responsale, contactez-moi"
-    />
     <meta name="author" content="Nicolas Seine" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta
       name="keywords"
       content="Création de site internet, développeur web Occitanie, développeur fullstack"
     />
-    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+    <SEO title={title} description={description} charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
+  </head>/>
 
   <body class="overflow-x-hidden font-sans bg-neutral-900 flex justify-center">
     <AnalyticsScript />

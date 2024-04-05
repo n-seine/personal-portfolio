@@ -1,7 +1,7 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { ViewTransitions } from "astro:transitions";
-
+import { SEO } from "astro-seo";
 import { getCollection, getEntry } from "astro:content";
 import ProjetLayout from "../../layouts/ProjetLayout.astro";
 import ProjetDetails from "../../components/ProjetDetails.astro";
@@ -28,28 +28,26 @@ const types = displayedProjet.data.type.map((t) => t).join(" / ");
 ---
 
 <ProjetLayout
-  title={`Nicolas Seine : portfolio // ${displayedProjet.data.titre}`}
+  title={"Nicolas Seine : portfolio - " + displayedProjet.data.titre}
+  description={"Mon projet" +
+    displayedProjet.data.titre +
+    displayedProjet.data.headerText}
 >
-  <head>
-    <ViewTransitions />
-  </head>
-  <>
-    <h1 class="h-fit w-full text-4xl font-bold text-neutral-800 mb-2">
-      {displayedProjet.data.titre}
-    </h1>
-    <h2 class="text-neutral-800 text-lg font-light mb-8">{types}</h2>
-    <p class="text-neutral-800 text-2xl font-extralight mb-8">
-      {displayedProjet.data.headerText}
-    </p>
+  <h1 class="h-fit w-full text-4xl font-bold text-neutral-800 mb-2">
+    {displayedProjet.data.titre}
+  </h1>
+  <h2 class="text-neutral-800 text-lg font-light mb-8">{types}</h2>
+  <p class="text-neutral-800 text-2xl font-extralight mb-8">
+    {displayedProjet.data.headerText}
+  </p>
 
-    <Image
-      src={displayedProjet.data.coverImage}
-      alt={displayedProjet.data.altCover || "Une image illustrant le projet"}
-      width={1200}
-      class="w-full h-auto object-cover mb-16"
-    />
-    <div class="prose lg:prose-lg prose-neutral prose-p:font-light w-full line">
-      <Content />
-    </div>
-  </>
+  <Image
+    src={displayedProjet.data.coverImage}
+    alt={displayedProjet.data.altCover || "Une image illustrant le projet"}
+    width={1200}
+    class="w-full h-auto object-cover mb-16"
+  />
+  <div class="prose lg:prose-lg prose-neutral prose-p:font-light w-full line">
+    <Content />
+  </div>
 </ProjetLayout>
