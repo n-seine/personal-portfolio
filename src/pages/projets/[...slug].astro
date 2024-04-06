@@ -40,13 +40,27 @@ const types = displayedProjet.data.type.map((t) => t).join(" / ");
   <p class="text-neutral-800 text-2xl font-extralight mb-8">
     {displayedProjet.data.headerText}
   </p>
-
-  <Image
-    src={displayedProjet.data.coverImage}
-    alt={displayedProjet.data.altCover || "Une image illustrant le projet"}
-    width={1200}
-    class="w-full h-auto object-cover mb-16"
-  />
+  {
+    displayedProjet.data.href ? (
+      <a href={displayedProjet.data.href}>
+        <Image
+          src={displayedProjet.data.coverImage}
+          alt={
+            displayedProjet.data.altCover || "Une image illustrant le projet"
+          }
+          width={1200}
+          class="w-full h-auto object-cover mb-16"
+        />
+      </a>
+    ) : (
+      <Image
+        src={displayedProjet.data.coverImage}
+        alt={displayedProjet.data.altCover || "Une image illustrant le projet"}
+        width={1200}
+        class="w-full h-auto object-cover mb-16"
+      />
+    )
+  }
   <div class="prose lg:prose-lg prose-neutral prose-p:font-light w-full line">
     <Content />
   </div>

@@ -4,6 +4,7 @@ type: ["site", "CMS", "portfolio", "graphiste"]
 coverImage: "./images/estelle.png"
 altCover: "Page d'accueil du site d'Estelle Chauvard"
 headerText: "Comment multiplier les performances d'un site internet sans coût supplémentaire ? Illustration de la puissance des sites statiques"
+href: "https://estelle-chauvard.com"
 ---
 
 ### Modifications graphiques

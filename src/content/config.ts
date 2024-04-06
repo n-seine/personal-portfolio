@@ -8,9 +8,10 @@ const projetCollection = defineCollection({
     z.object({
       titre: z.string(),
       type: z.array(z.string()),
+      href: z.string().optional(),
       subtitle: z.string().optional(),
       coverImage: image().optional(),
-      altCover : z.string().optional(),
+      altCover: z.string().optional(),
       headerText: z.string().optional(),
     }),
 });
