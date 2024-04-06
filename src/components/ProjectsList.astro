@@ -15,7 +15,7 @@ const projets = await getCollection("projet");
         <li class="text-right w-full max-h-60  ">
           <a
             href={`/projets/${projet.slug}`}
-            class=" h-fit w-full xl:text-4xl  font-thin  text-neutral-800 hover:text-stone-500 hover:cursor-pointer lg:hover:text-5xl transition-all duration-500"
+            class=" h-fit w-full xl:text-4xl  font-thin  text-neutral-800 hover:text-stone-500 hover:cursor-pointer xl:hover:text-5xl transition-all duration-500"
           >
             <p class="text-right text-xs font-semibold mr-2">{types}</p>
             <p class="">{projet.data.titre}</p>
